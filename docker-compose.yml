@@ -8,10 +8,9 @@ services:
       - 389:389
       - 636:636
     volumes:
-      - /etc/localtime:/etc/localtime
-      - /etc/localtime:/etc/localtime
-      - /data/openldap/data:/var/lib/ldap
-      - /data/openldap/conf:/etc/ldap/slapd.d
+      - ./openldap:/etc/localtime
+      - ./openldap/data:/var/lib/ldap
+      - ./openldap/conf:/etc/ldap/slapd.d
     environment:
       LDAP_TLS_VERIFY_CLIENT: never
       LDAP_ORGANISATION: git
@@ -39,7 +38,7 @@ services:
     ports:
       - 8099:80
     volumes:
-      - /etc/localtime:/etc/localtime
+
     environment:
       - PHPLDAPADMIN_LDAP_HOSTS=192.168.2.101
       - PHPLDAPADMIN_HTTPS=false
