@@ -41,7 +41,7 @@ services:
 
     environment:
       - PHPLDAPADMIN_LDAP_HOSTS=https://phpldapadmin-lesstop.cloud.okteto.net
-      - PHPLDAPADMIN_HTTPS=True
+      - PHPLDAPADMIN_HTTPS=false
     networks:
       - openldap
     deploy:
